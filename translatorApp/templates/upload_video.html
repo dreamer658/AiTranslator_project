@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> Titre </title>
+        <title> Sandrine </title>
     </head>
     <body> 
-        <h1> Upload ta video </h1>
-        <form method="post" enctype="multipart/form-data">
+        <h1> Charge ta video </h1>
+        <form method="post" enctype="multipart/form-data" id="uploadForm">
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit"> Upload </button>
         </form>
 
+        <script>
+            // When the window is loaded, reset the form
+            window.onload = function() {
+                document.getElementById('uploadForm').reset();
+            };
+        </script>
 
     </body>
 
